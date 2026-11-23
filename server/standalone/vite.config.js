@@ -44,6 +44,8 @@ export function standaloneConfig(
     allowedHosts: resolveAllowedHosts(
       [
         process.env.GEV_ALLOWED_HOSTS,
+        process.env.VERCEL_URL,
+        process.env.VERCEL_BRANCH_URL,
         'workspace-zqfrkwgh-0fd9d9ba4f2e49d4.v0.build',
       ]
         .filter(Boolean)

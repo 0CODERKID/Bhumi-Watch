@@ -120,12 +120,12 @@ watch(step, async () => {
     ?.focus?.({ preventScroll: true });
 });
 const TITLES = [
-  msg('Welcome to God\'s Eye View'),
+  msg('Welcome to Bhumi Watch'),
   msg('Where do you want to start?'),
   msg('Three things to know'),
 ];
 const LEADS = [
-  msg('It feels like a forbidden cockpit—then you realize the sources are public and the data is real.'),
+  msg('Explore India on a 3D globe, then switch on environmental and street-level data layers.'),
   msg('Pick one to begin with. You can change everything later.'),
   msg('That is all you need to get going.'),
 ];
