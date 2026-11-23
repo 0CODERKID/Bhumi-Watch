@@ -46,6 +46,7 @@ export function standaloneConfig(
         process.env.GEV_ALLOWED_HOSTS,
         process.env.VERCEL_URL,
         process.env.VERCEL_BRANCH_URL,
+        'bhumi-watch-git-v0-bhumi-in-b5162c-coder-kids-projects-a6574c7a.vercel.app',
         'workspace-zqfrkwgh-0fd9d9ba4f2e49d4.v0.build',
       ]
         .filter(Boolean)
