@@ -760,7 +760,7 @@ test('markup, startup ordering and accessibility remain pinned', async () => {
   assert.match(html, /data-first-run-next/);
   assert.ok(
     html.includes(
-      '<p id="first-run-description">It feels like a forbidden cockpit—then you realize the sources are public and the data is real.</p>',
+      '<p id="first-run-description">Live earthquakes and active fires, from USGS and NASA</p>',
     ),
     'the maintainer-authored first-run line stays verbatim',
   );

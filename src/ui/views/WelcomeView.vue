@@ -9,6 +9,7 @@ import UiIcon from '../kit/UiIcon.vue';
 import { followSelectorRootClass } from '../rail/rootClass.js';
 import { useFirstRunStore } from '../stores/firstRun.js';
 import { useStoriesStore } from '../stores/stories.js';
+import IndiaWatchPanel from './IndiaWatchPanel.vue';
 
 // While the launcher is on the page, `launcher-shown` is on the page root
 // (src/ui/rail/rootClass.js; first-run.css reads it). It follows the element
@@ -120,12 +121,12 @@ watch(step, async () => {
     ?.focus?.({ preventScroll: true });
 });
 const TITLES = [
-  msg('Welcome to Bhumi Watch'),
+  msg('Choose your mode'),
   msg('Where do you want to start?'),
   msg('Three things to know'),
 ];
 const LEADS = [
-  msg('Explore India on a 3D globe, then switch on environmental and street-level data layers.'),
+  msg('Live earthquakes and active fires, from USGS and NASA'),
   msg('Pick one to begin with. You can change everything later.'),
   msg('That is all you need to get going.'),
 ];
@@ -254,7 +255,7 @@ function onSuppress(event) {
         <li class="first-run-tip first-run-tip--layers">
           <span class="first-run-tip-art" aria-hidden="true"><UiIcon name="layers" :size="null" /><i class="first-run-tip-dot"></i></span>
           <strong>{{ t('Turn on layers') }}</strong>
-          <small>{{ t('Turn layers on to see flights, ships, cameras, weather and more.') }}</small>
+          <small translate="no">Explore wildfire, disaster and sustainability signals across India.</small>
         </li>
         <li class="first-run-tip first-run-tip--context">
           <span class="first-run-tip-art" aria-hidden="true"><UiIcon name="my_location" :size="null" /><i class="first-run-tip-ring"></i></span>
@@ -328,4 +329,5 @@ function onSuppress(event) {
     </div>
 
   </aside>
+  <IndiaWatchPanel />
 </template>

@@ -1064,7 +1064,7 @@ watch(
         :aria-invalid="showFeedback ? 'true' : undefined"
         :aria-describedby="showFeedback ? 'omnibar-error' : undefined"
         :aria-label="t('Search places, layers and things on the map, or ask GEV')"
-        :placeholder="t('Search places, layers, flights… or ask GEV  ·  > for commands')"
+        :placeholder="t('Search places, layers and things on the map, or ask GEV')"
         :value="query"
         @input="onInput"
         @compositionend="onInput"
