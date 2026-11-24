@@ -17,11 +17,13 @@ function viewerRecording(views) {
   });
 }
 
-test('the camera starts over the whole planet, looking straight down', () => {
+test('the camera starts over India with the whole planet in view', () => {
   const views = [];
   applyStartView(viewerRecording(views));
   assert.equal(views.length, 1);
-  assert.ok(START_VIEW.height >= 20000000, 'the whole planet is in view');
+  assert.ok(START_VIEW.height >= 2000000 && START_VIEW.height <= 6000000, 'the Indian subcontinent is in view');
+  assert.equal(START_VIEW.lon, 78);
+  assert.equal(START_VIEW.lat, 22);
   assert.ok(Math.abs(views[0].orientation.pitch + Math.PI / 2) < 1e-9);
   assert.equal(views[0].orientation.heading, 0);
 });

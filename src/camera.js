@@ -2,13 +2,12 @@ import { toRadians } from './geo/index.js';
 import { cameraOf } from './render/rendererOf.js';
 
 /**
- * The view the renderer starts from: the whole planet, looking straight
- * down, centred where Cesium's default view rectangle is.
+ * The view the renderer starts from: India centered on the 3D globe.
  */
 export const START_VIEW = Object.freeze({
-  lon: -82.5,
-  lat: 35,
-  height: 23000000,
+  lon: 78,
+  lat: 22,
+  height: 4200000,
 });
 
 /**

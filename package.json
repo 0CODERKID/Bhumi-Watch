@@ -2,7 +2,7 @@
   "name": "gods-eye-view",
   "private": true,
   "version": "0.3.0",
-  "description": "A real-time intelligence console for planet Earth — photorealistic 3D globe, live aircraft/ships/satellites/earthquakes/CCTV, and hands-free voice control. Runs in a browser.",
+  "description": "An India-focused environmental intelligence globe for wildfire alerts, natural disasters, climate signals, sustainability news, and live Earth data.",
   "type": "module",
   "license": "MIT",
   "author": "Bilawal Sidhu",
@@ -18,18 +18,15 @@
     "node": ">=24.14.0 <25 || >=26 <27"
   },
   "keywords": [
+    "india",
+    "environmental-intelligence",
+    "sustainability",
+    "wildfire-alerts",
+    "natural-disasters",
+    "climate-news",
     "cesium",
     "3d-globe",
-    "geospatial",
-    "osint",
-    "spatial-intelligence",
-    "photorealistic-3d-tiles",
-    "adsb",
-    "ais",
-    "satellites",
-    "voice-control",
-    "openai-realtime",
-    "visualization"
+    "earthquakes"
   ],
   "scripts": {
     "doctor": "node scripts/setup-doctor.mjs",

@@ -33,6 +33,7 @@ import { ghostMapsProxy } from './ghostMaps.js';
 import { shipwrecksProxy } from './shipwrecks.js';
 import { droneAirspaceProxy } from './droneAirspace.js';
 import { newsProxy } from './news.js';
+import { indiaWatchProxy } from './indiaWatch.js';
 import { inaturalistProxy } from './inaturalist/observations.js';
 import { acartiaProxy } from './acartia.js';
 import { cycloneProxy } from './cyclones.js';
@@ -93,6 +94,7 @@ function localProviderPlugins({
     shipwrecksProxy(),
     droneAirspaceProxy(),
     newsProxy(),
+    indiaWatchProxy(),
     inaturalistProxy(),
     acartiaProxy(),
     keySetupEndpoint(),

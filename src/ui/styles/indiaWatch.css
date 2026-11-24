@@ -1,0 +1,377 @@
+.india-watch {
+  position: fixed;
+  z-index: 140;
+  right: max(14px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  color: #edf2e9;
+  font-family: var(--font-sans);
+}
+.india-watch__trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 7px 13px 7px 9px;
+  border: 1px solid rgba(168, 198, 153, 0.36);
+  border-radius: 12px;
+  background: rgba(14, 27, 21, 0.94);
+  color: inherit;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+}
+.india-watch__trigger:hover,
+.india-watch__trigger[aria-expanded='true'] {
+  border-color: rgba(189, 217, 157, 0.8);
+  background: rgba(24, 43, 31, 0.97);
+}
+.india-watch__trigger-mark {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(166, 196, 117, 0.15);
+  color: #b8d28b;
+  font-size: 19px;
+}
+.india-watch__trigger-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+.india-watch__trigger-copy strong {
+  font: 600 10px var(--font-mono);
+  letter-spacing: 0.13em;
+}
+.india-watch__trigger-copy small {
+  color: rgba(237, 242, 233, 0.58);
+  font-size: 10px;
+}
+.india-watch__live-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: #a4cf87;
+  box-shadow: 0 0 10px rgba(164, 207, 135, 0.55);
+}
+.india-watch__panel {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  width: min(440px, calc(100vw - 24px));
+  max-height: min(690px, calc(100svh - 196px));
+  overflow: hidden;
+  border: 1px solid rgba(177, 202, 157, 0.27);
+  border-radius: 18px;
+  background: rgba(11, 21, 16, 0.97);
+  box-shadow:
+    0 20px 64px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.025) inset;
+  backdrop-filter: blur(22px) saturate(1.25);
+}
+.india-watch__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid rgba(220, 231, 213, 0.1);
+}
+.india-watch__header h2 {
+  max-width: 330px;
+  margin-top: 8px;
+  color: #f0f3ec;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+.india-watch__eyebrow,
+.india-watch__section-head,
+.india-watch__metric span {
+  color: #a9c397;
+  font: 600 9px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+}
+.india-watch__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.india-watch__dek {
+  max-width: 350px;
+  margin-top: 6px;
+  color: rgba(237, 242, 233, 0.62);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.india-watch__icon-button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  place-items: center;
+  border: 1px solid rgba(237, 242, 233, 0.14);
+  border-radius: 9px;
+  background: transparent;
+  color: #dce5d5;
+  cursor: pointer;
+}
+.india-watch__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(220, 231, 213, 0.1);
+}
+.india-watch__metrics > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.india-watch__metrics strong {
+  color: #e7eddf;
+  font: 500 20px/1 var(--font-mono);
+}
+.india-watch__metrics span {
+  color: rgba(237, 242, 233, 0.48);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.india-watch__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 11px 18px 8px;
+}
+.india-watch__filter {
+  flex: none;
+  padding: 6px 9px;
+  border: 1px solid rgba(237, 242, 233, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.025);
+  color: rgba(237, 242, 233, 0.67);
+  font-size: 10px;
+  cursor: pointer;
+}
+.india-watch__filter:hover,
+.india-watch__filter.is-active {
+  border-color: rgba(169, 195, 151, 0.5);
+  background: rgba(169, 195, 151, 0.12);
+  color: #e5efdb;
+}
+.india-watch__body {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 5px 18px 14px;
+  overscroll-behavior: contain;
+}
+.india-watch__section + .india-watch__section {
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(220, 231, 213, 0.1);
+}
+.india-watch__section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 3px 0 8px;
+}
+.india-watch__section-head h3 {
+  font: inherit;
+}
+.india-watch__section-head span {
+  color: rgba(237, 242, 233, 0.4);
+  font-size: 8px;
+}
+.india-watch__articles,
+.india-watch__events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.india-watch__articles li {
+  border-bottom: 1px solid rgba(220, 231, 213, 0.07);
+}
+.india-watch__articles a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 1px;
+  color: inherit;
+  text-decoration: none;
+}
+.india-watch__articles a:hover .india-watch__article-title,
+.india-watch__event-title:hover {
+  color: #c2d99d;
+}
+.india-watch__article-title {
+  color: rgba(245, 247, 240, 0.92);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.india-watch__article-meta,
+.india-watch__event-copy p {
+  color: rgba(237, 242, 233, 0.47);
+  font: 9px/1.45 var(--font-mono);
+}
+.india-watch__events li {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(220, 231, 213, 0.07);
+}
+.india-watch__event-marker {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: #a9c397;
+  box-shadow: 0 0 8px currentColor;
+}
+.event-fire .india-watch__event-marker {
+  background: #e5a958;
+}
+.event-flood .india-watch__event-marker,
+.event-storm .india-watch__event-marker {
+  background: #74b5c5;
+}
+.event-earthquake .india-watch__event-marker,
+.event-landslide .india-watch__event-marker {
+  background: #db8272;
+}
+.india-watch__event-copy {
+  min-width: 0;
+}
+.india-watch__event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+  color: rgba(192, 212, 177, 0.8);
+  font: 600 8px var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.india-watch__event-title {
+  display: inline-block;
+  color: rgba(245, 247, 240, 0.92);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.india-watch__event-copy p {
+  margin-top: 3px;
+}
+.india-watch__alert {
+  color: #efb66e;
+}
+.india-watch__alert.alert-red {
+  color: #ec8c77;
+}
+.india-watch__empty,
+.india-watch__status {
+  padding: 14px 0;
+  color: rgba(237, 242, 233, 0.58);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.india-watch__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 18px;
+}
+.india-watch__status--error {
+  color: #efac9b;
+}
+.india-watch__footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  border-top: 1px solid rgba(220, 231, 213, 0.1);
+  color: rgba(237, 242, 233, 0.42);
+  font: 8px/1.4 var(--font-mono);
+}
+.india-watch__footer > span:first-child {
+  flex: 1;
+}
+.india-watch__refresh {
+  flex: none;
+  border: 0;
+  background: transparent;
+  color: #b8d28b;
+  font: 600 9px var(--font-mono);
+  cursor: pointer;
+}
+.india-watch__refresh:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.india-watch__disclaimer {
+  padding: 0 18px 11px;
+  color: rgba(237, 242, 233, 0.38);
+  font-size: 9px;
+  line-height: 1.4;
+}
+@media (max-width: 600px) {
+  .india-watch {
+    right: 10px;
+    bottom: max(74px, env(safe-area-inset-bottom));
+  }
+  .india-watch__panel {
+    right: -2px;
+    bottom: 58px;
+    width: min(440px, calc(100vw - 18px));
+    max-height: min(680px, calc(100svh - 250px));
+  }
+  .india-watch__header {
+    padding: 15px 14px 12px;
+  }
+  .india-watch__metrics {
+    margin-inline: 14px;
+  }
+  .india-watch__filters {
+    padding-inline: 14px;
+  }
+  .india-watch__body {
+    padding-inline: 14px;
+  }
+  .india-watch__footer {
+    padding-inline: 14px;
+  }
+  .india-watch__disclaimer {
+    padding-inline: 14px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .india-watch__panel {
+    animation: india-watch-in 180ms ease-out both;
+  }
+  @keyframes india-watch-in {
+    from {
+      opacity: 0;
+      transform: translateY(7px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
